@@ -1,0 +1,905 @@
+/* GENERAL STYLES - Part 1 */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: #f8f9fa;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.banner img {
+    filter: grayscale(30%);
+    transition: filter 0.5s ease-in-out;
+}
+
+.banner:hover img {
+    filter: grayscale(0%);
+}
+
+/* NAVBAR STYLES - Part 1 */
+.navbar {
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #FCBC0F;
+    font-size: 1.8rem;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.5rem;
+    color: #FCBC0F;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 30px;
+}
+
+.navbar-nav .nav-link {
+    color: #f8f9fa;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+}
+
+/* HERO SECTION STYLES - Part 1 */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.hero-section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    text-align: center;
+    color: #ffffff;
+    z-index: 1;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    animation: colorChange 5s infinite alternate;
+}
+
+.hero-overlay p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* MEDIA QUERIES - Responsive Styles */
+@media (max-width: 992px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .hero-section {
+        height: auto;
+        padding: 100px 0;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .hero-overlay p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+}
+
+/* Part 1 End */
+/* PORTFOLIO SECTION - Part 2 */
+.portfolio {
+    padding: 5rem 0;
+}
+
+.portfolio h2 {
+    text-align: center;
+    color: #FCBC0F;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.portfolio-filter {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.portfolio-filter button {
+    background-color: transparent;
+    color: #f8f9fa;
+    border: 1px solid #FCBC0F;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-filter button:hover,
+.portfolio-filter button.active {
+    background-color: #FCBC0F;
+    color: #000;
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.portfolio-item {
+    width: calc(33.333% - 2rem);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FCBC0F;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+/* PORTFOLIO DETAILS - Part 2 */
+.portfolio-details {
+    padding: 5rem 0;
+    background-color: #1a1a1a;
+}
+
+.portfolio-details img {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.portfolio-details .description {
+    color: #f8f9fa;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* MEDIA QUERIES - Portfolio Responsive Styles */
+@media (max-width: 992px) {
+    .portfolio-item {
+        width: calc(50% - 2rem);
+    }
+
+    .portfolio-filter button {
+        padding: 8px 16px;
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: 100%;
+    }
+}
+
+/* TESTIMONIALS SECTION - Part 2 */
+.testimonials {
+    padding: 5rem 0;
+    background: #111;
+}
+
+.testimonials h2 {
+    text-align: center;
+    color: #FFD700;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.testimonial-card {
+    background: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-card p {
+    font-size: 1.2rem;
+    color: #f8f9fa;
+}
+
+.testimonial-card h5 {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #FFD700;
+}
+
+/* MEDIA QUERIES - Testimonials Responsive Styles */
+@media (max-width: 992px) {
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Part 2 End */
+/* RESUME SECTION - Part 3 */
+#resume {
+    padding: 5rem 0;
+    text-align: center;
+    background-color: #222;
+}
+
+#resume h2 {
+    color: #FCBC0F;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.resume-container {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.resume-container a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.resume-container a:hover {
+    color: #FCBC0F;
+}
+
+/* SERVICES SECTION - Part 3 */
+#services {
+    padding: 5rem 0;
+    color: #f8f9fa;
+}
+
+#services h2 {
+    text-align: center;
+    color: #FFD700;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.service-card {
+    background: #333;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.service-card .card-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.service-card .card-title {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+.service-card .card-text {
+    font-size: 1.1rem;
+}
+
+/* MEDIA QUERIES - Services Responsive Styles */
+@media (max-width: 992px) {
+    #services h2 {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card .card-body {
+        padding: 1.5rem;
+    }
+}
+
+/* CONTACT SECTION - Part 3 */
+#contact {
+    padding: 5rem 0;
+    color: #f8f9fa;
+}
+
+#contact h2 {
+    text-align: center;
+    color: #FCBC0F;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+#contact form {
+    background: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#contact .form-label {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+#contact .form-control {
+    background: #222;
+    color: #f8f9fa;
+    border: 1px solid #555;
+    transition: border-color 0.3s ease;
+}
+
+#contact .form-control:focus {
+    border-color: #FCBC0F;
+    box-shadow: none;
+}
+
+#contact button {
+    background: transparent;
+    border: 2px solid #FCBC0F;
+    color: #FCBC0F;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #FCBC0F;
+    color: #000;
+}
+
+/* MEDIA QUERIES - Contact Responsive Styles */
+@media (max-width: 992px) {
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    #contact form {
+        padding: 1.5rem;
+    }
+}
+
+/* Part 3 End */
+/* ABOUT ME SECTION - Part 4 */
+#about {
+    padding: 5rem 0;
+    color: #f8f9fa;
+    background-size: cover;
+    background-position: center;
+}
+
+#about h2 {
+    text-align: center;
+    color: #FCBC0F;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+#about .row {
+    align-items: center;
+}
+
+#about img {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+#about img:hover {
+    transform: scale(1.05);
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* ABOUT EXPERIENCE SECTION - Part 4 */
+#about-experience {
+    padding: 5rem 0;
+    background-color: #222;
+    color: #f8f9fa;
+}
+
+#about-experience h2 {
+    text-align: center;
+    color: #FFD700;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.experience-card {
+    background: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.experience-card h5 {
+    font-size: 1.5rem;
+    color: #FCBC0F;
+    margin-bottom: 1rem;
+}
+
+.experience-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* MEDIA QUERIES - About & Experience Responsive Styles */
+@media (max-width: 992px) {
+
+    #about h2,
+    #about-experience h2 {
+        font-size: 2rem;
+    }
+
+    #about-experience .experience-card {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #about p {
+        font-size: 1rem;
+    }
+
+    .experience-card {
+        padding: 1.5rem;
+    }
+}
+
+/* BLOG SECTION - Part 4 */
+#blog {
+    padding: 5rem 0;
+    background-color: #111;
+    color: #f8f9fa;
+}
+
+#blog h2 {
+    text-align: center;
+    color: #FFD700;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.blog-post {
+    background: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+.blog-post h5 {
+    color: #FCBC0F;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.blog-post a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-post a:hover {
+    color: #FCBC0F;
+}
+
+/* MEDIA QUERIES - Blog Responsive Styles */
+@media (max-width: 992px) {
+    #blog h2 {
+        font-size: 2rem;
+    }
+
+    .blog-post {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-post h5 {
+        font-size: 1.5rem;
+    }
+
+    .blog-post p {
+        font-size: 1rem;
+    }
+}
+
+/* Part 4 End */
+/* TESTIMONIALS SECTION - Part 5 */
+#testimonials {
+    padding: 5rem 0;
+    background: #111;
+    color: #f8f9fa;
+}
+
+#testimonials h2 {
+    text-align: center;
+    color: #FFD700;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.testimonial-card {
+    background: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.testimonial-card p {
+    font-size: 1.2rem;
+    color: #f8f9fa;
+}
+
+.testimonial-card h5 {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #FFD700;
+}
+
+/* MEDIA QUERIES - Testimonials Responsive Styles */
+@media (max-width: 992px) {
+    #testimonials h2 {
+        font-size: 2rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-card p {
+        font-size: 1rem;
+    }
+}
+
+/* GOODBYE SECTION - Part 5 */
+#goodbye {
+    padding: 7rem 0;
+    background-size: cover;
+    background-position: center;
+    color: #f8f9fa;
+}
+
+#goodbye h2 {
+    text-align: center;
+    color: #FCBC0F;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#goodbye p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    color: #f8f9fa;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #FCBC0F;
+    transform: scale(1.2);
+}
+
+/* MEDIA QUERIES - Goodbye Responsive Styles */
+@media (max-width: 992px) {
+    #goodbye h2 {
+        font-size: 2rem;
+    }
+
+    #goodbye p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+}
+
+/* BUTTONS & GENERAL LINKS - Part 5 */
+.btn {
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-primary {
+    border: 2px solid #FCBC0F;
+    color: #FCBC0F;
+}
+
+.btn-outline-primary:hover {
+    background-color: #FCBC0F;
+    color: #000;
+}
+
+.btn-outline-danger {
+    border: 2px solid #FFD700;
+    color: #FFD700;
+}
+
+.btn-outline-danger:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+
+/* MEDIA QUERIES - Buttons & Links */
+@media (max-width: 768px) {
+    .btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+}
+
+/* Part 5 End */
+/* HERO SECTION TEXT ANIMATIONS - Part 6 */
+.hero-overlay {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-overlay h1 {
+    animation: colorChange 5s infinite alternate;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-overlay p {
+    animation: fadeInUp 1.5s ease-in-out;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #FFD700;
+    }
+
+    100% {
+        color: #FCBC0F;
+    }
+}
+
+/* NAVIGATION BAR SCROLL EFFECT - Part 6 */
+.navbar-scroll {
+    background: rgba(0, 0, 0, 0.9);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-scroll .nav-link {
+    color: #FFD700;
+}
+
+/* VIDEO EMBED STYLING - Part 6 */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* SITEMAP STYLES - Part 6 */
+.sitemap {
+    padding: 5rem 0;
+    background: #222;
+    color: #f8f9fa;
+}
+
+.sitemap h2 {
+    text-align: center;
+    color: #FCBC0F;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.sitemap ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.sitemap ul li {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+.sitemap ul li a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sitemap ul li a:hover {
+    color: #FCBC0F;
+}
+
+/* MEDIA QUERIES - Sitemap & Hero Section */
+@media (max-width: 992px) {
+    .sitemap h2 {
+        font-size: 2rem;
+    }
+
+    .sitemap ul li {
+        margin: 0 10px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sitemap ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero-overlay p {
+        font-size: 1.2rem;
+    }
+}
+
+/* PART 6 END */
